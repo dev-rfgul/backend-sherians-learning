@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS CDN -->
+  </head>
+  <body class="bg-zinc-900 flex items-center justify-center min-h-screen">
+    <div class="form bg-zinc-800 p-8 rounded-lg shadow-lg w-full max-w-md">
+      <form action="/edit" method="post" class="space-y-6">
+        <div>
+          <input
+            type="text"
+            name="previous"
+            disabled="true"
+            placeholder="Previous Name"
+            class="w-full p-4 rounded-lg bg-zinc-700 text-zinc-500 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            value=<%=filename%>
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            name="new"
+            placeholder="New Name"
+            class="w-full p-4 rounded-lg bg-zinc-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+        <button
+          type="submit"
+          class="w-full py-3 bg-yellow-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition duration-300"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

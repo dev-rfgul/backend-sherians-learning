@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS CDN -->
+  </head>
+  <body class="bg-zinc-900 flex items-center justify-center min-h-screen">
+    <div
+      class="bg-zinc-800 p-8 rounded-lg shadow-md max-w-lg w-full text-center"
+    >
+      <h1 class="text-3xl font-bold text-gray-100 mb-6"><%=filename%></h1>
+      <p class="text-gray-400 leading-relaxed mb-8"><%=filedata%></p>
+      <a
+        href="/"
+        class="bg-blue-500 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-600 transition duration-300"
+      >
+        Go back to home
+      </a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Styled Form with Task</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="main w-full min-h-screen bg-zinc-900 flex flex-col items-center justify-center space-y-10">
+      <!-- Form Section -->
+      <div class="form bg-zinc-800 p-8 rounded-lg shadow-lg w-full max-w-md">
+        <form action="/create" method="post" class="space-y-6">
+          <div>
+            <input
+              type="text"
+              name="title"
+              placeholder="Title goes here"
+              class="w-full p-4 rounded-lg bg-zinc-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+          <div>
+            <textarea
+              name="details"
+              placeholder="Enter your details"
+              class="w-full p-4 h-32 rounded-lg bg-zinc-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition duration-300"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+
+      <!-- Task Section -->
+      <div class="task-container w-full flex flex-wrap justify-center space-x-6 space-y-6">
+        <% if (files.length === 0) { %>
+          <h4 class="text-white">No tasks yet</h4>
+        <% } else { %> 
+          <% files.forEach((val) => { %>
+            <div class="task bg-zinc-800 p-6 rounded-lg shadow-lg w-full max-w-sm space-y-4 text-center">
+              <h1 class="text-2xl text-white font-semibold"><%=val%></h1>
+              <a
+                href="/file/<%= val.endsWith('.txt') ? val : val + '.txt' %>"
+                class="inline-block bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300"
+              >
+                Read More
+              </a>
+              <a
+                href="/edit/<%= val.endsWith('.txt') ? val : val + '.txt' %>"
+                class="inline-block bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300"
+              >
+                Edit File Name 
+              </a>
+            </div>
+          <% }) %>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>
