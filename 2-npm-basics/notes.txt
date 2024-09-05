@@ -1,0 +1,9 @@
+jo node js core ma install hota hy wo module hota hy
+
+or jo npm  k sath install krna pry wo pkg hota hy
+
+dependencies are those which are needed for the production of the site to perform some functionlaity
+while the dev dependencies are those which are only needed for the development they are not pushed to the production 
+
+
+you can make your own scripts and here is the question for start we dont need to write the cmd like "npm run start" but we write "npm run dev" its bcoz start and test cmd are by default and all other scripts created by the programmer will need to be prepended with " run " . like  i made a "fahad" script in my pkg.json
